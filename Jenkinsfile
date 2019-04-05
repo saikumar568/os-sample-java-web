@@ -27,7 +27,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        bat 'bat \'cp target/ROOT.war TOMCAT_DIRECTORY/webapps/\''
+        bat 'bat \'nohup mvn tomcat8:run-war &\' bat \'sleep 10\''
       }
     }
   }
