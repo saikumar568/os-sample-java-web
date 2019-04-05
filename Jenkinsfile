@@ -1,9 +1,9 @@
 pipeline {
 	agent any	
   tools { 
-        maven 'MAVEN' 
-	jdk 'JAVA'
-	 git 'GIT'
+        maven 'maven' 
+	jdk 'jdk'
+	 git 'git'
         
     }
   options {
