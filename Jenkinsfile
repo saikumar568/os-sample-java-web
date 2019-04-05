@@ -111,7 +111,7 @@ pipeline {
 			//bat 'rmdir /S /Q Jmeter'
         		//bat 'git clone https://github.com/Ajayvarma8142/os-sample-java-web.git'	
 			//bat 'cd Jmeter && run.bat'
-			//perfReport compareBuildPrevious: true, modeOfThreshold: true, percentiles: '0,50,90,100', sourceDataFiles: '**/*.jtl'
+			//perfReport compareBuildPrevious: true, modeOfThreshold: true, percentiles: '0,50,90,100', sourceDataFiles: 
 		})
       }
     }
