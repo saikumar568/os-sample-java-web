@@ -66,8 +66,7 @@ pipeline {
         	withEnv(['JENKINS_NODE_COOKIE=dontKill']){
         		
         		bat 'start runapp.bat'
-		        copy 'C:/Program Files (x86)/Jenkins/jobs/testing/branches/master/workspace/target/ROOT.war C:/Tomcat 8.5/webapps'
-        		
+		                		
         	}
         }
       }
