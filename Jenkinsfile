@@ -47,7 +47,7 @@ pipeline {
     		//sh "${HOME}/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/Sonar/bin/sonar-runner -Dsonar.projectName=ecommerce -Dsonar.projectVersion=1.0 -Dsonar.projectKey=ecommerce -Dsonar.sources=src/main/java -Dsonar.java.binaries=target/classes"
              sh "${SONAR_RUNNER_HOME}/bin/sonar-runner -Dsonar.projectName=ecommerce -Dsonar.projectVersion=1.0 -Dsonar.projectKey=ecommerce -Dsonar.sources=src/main/java -Dsonar.java.binaries=target/classes"		    
             }*/
-		  withSonarQubeEnv('Sonar') {
+		  withSonarQubeEnv('SonarQube') {
       // requires SonarQube Scanner for Maven 3.2+
       bat 'mvn sonar:sonar'
     }
