@@ -15,7 +15,7 @@ pipeline {
       parallel {
         stage('test') {
           steps {
-            sh 'mvn test'
+            bat 'mvn test'
           }
         }
         stage('sonar-test') {
