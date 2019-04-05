@@ -27,7 +27,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        bat 'bat \'nohup mvn tomcat8:run-war &\' bat \'sleep 10\''
+        bat 'bat \'start runapp.bat\''
       }
     }
   }
