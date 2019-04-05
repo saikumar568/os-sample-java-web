@@ -89,13 +89,13 @@ pipeline {
 	}) 
       }
     }*/
-    stage('qa-deploy') {
+   // stage('qa-deploy') {
 	//agent {label 'qa'} 
-      steps {
+    //  steps {
         
-        bat 'mvn package'
-      }
-    }
+     //   bat 'mvn package'
+     // }
+  //  }
     /*stage('qa tests') {
 	//agent {label 'qa'}
       steps {
