@@ -79,13 +79,13 @@ pipeline {
 	//bat 'rmdir /S /Q ecommerce-smoke-uitests'	
         //bat 'git clone https://github.com/Ajayvarma8142/os-sample-java-web.git'
        // bat 'cd ecommerce-smoke-uitests && gradlew cucumber -Pfeatures=src/test/resources/gradle/cucumber/smoke report --continue'
-	//cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'ecommerce-smoke-uitests'
+	//cucumber fileIncludePattern: 
 	//},
 	//"api test":{
 	//	bat 'rmdir /S /Q ecommerce-apitests'
 	//bat 'git clone https://github.com/Ajayvarma8142/os-sample-java-web.git'
        // bat 'cd ecommerce-apitests && gradlew cucumber -Pfeatures=src/test/resources/gradle/cucumber report --continue'
-	//cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'ecommerce-apitests'
+	//cucumber fileIncludePattern: 
 	}) 
       }
     }*/
