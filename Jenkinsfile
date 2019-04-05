@@ -25,14 +25,9 @@ pipeline {
         }
       }
     }
-    stage('Artifactory') {
-      steps {
-        archiveArtifacts '#abc'
-      }
-    }
     stage('Deploy') {
       steps {
-        sh '#!/bin/bash'
+        bat 'bat \'cp target/ROOT.war TOMCAT_DIRECTORY/webapps/\''
       }
     }
   }
