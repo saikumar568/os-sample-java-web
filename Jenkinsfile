@@ -34,7 +34,7 @@ pipeline {
                     echo ${SONAR_RUNNER_HOME}
                 ''' */
 	      //bat 'set JAVA_HOME = "C:\Program Files\Java\jdk1.8.0_181"'
-         bat 'mvn compile'
+         bat 'mvn clean install'
       }
     }
     stage('test') {
