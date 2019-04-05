@@ -78,14 +78,14 @@ pipeline {
 		"smoke test":{
 	//bat 'rmdir /S /Q ecommerce-smoke-uitests'	
         //bat 'git clone https://github.com/Ajayvarma8142/os-sample-java-web.git'
-        bat 'cd ecommerce-smoke-uitests && gradlew cucumber -Pfeatures=src/test/resources/gradle/cucumber/smoke report --continue'
-	cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'ecommerce-smoke-uitests'
-	},
-	"api test":{
+       // bat 'cd ecommerce-smoke-uitests && gradlew cucumber -Pfeatures=src/test/resources/gradle/cucumber/smoke report --continue'
+	//cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'ecommerce-smoke-uitests'
+	//},
+	//"api test":{
 	//	bat 'rmdir /S /Q ecommerce-apitests'
 	//bat 'git clone https://github.com/Ajayvarma8142/os-sample-java-web.git'
-        bat 'cd ecommerce-apitests && gradlew cucumber -Pfeatures=src/test/resources/gradle/cucumber report --continue'
-	cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'ecommerce-apitests'
+       // bat 'cd ecommerce-apitests && gradlew cucumber -Pfeatures=src/test/resources/gradle/cucumber report --continue'
+	//cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'ecommerce-apitests'
 	}) 
       }
     }*/
@@ -104,14 +104,14 @@ pipeline {
         //bat 'rmdir /S /Q ecommerce-uitests'
        // bat 'git clone https://github.com/Ajayvarma8142/os-sample-java-web.git'
        
-        bat 'cd ecommerce-uitests && gradlew cucumber -Pfeatures=src/test/resources/gradle/cucumber report --continue'
-	cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'ecommerce-uitests'	
+      //bat 'cd ecommerce-uitests && gradlew cucumber -Pfeatures=src/test/resources/gradle/cucumber report --continue'
+	//cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'ecommerce-uitests'	
 	},
-		"performance tests":{
+		//"performance tests":{
 			//bat 'rmdir /S /Q Jmeter'
         		//bat 'git clone https://github.com/Ajayvarma8142/os-sample-java-web.git'	
-			bat 'cd Jmeter && run.bat'
-			perfReport compareBuildPrevious: true, modeOfThreshold: true, percentiles: '0,50,90,100', sourceDataFiles: '**/*.jtl'
+			//bat 'cd Jmeter && run.bat'
+			//perfReport compareBuildPrevious: true, modeOfThreshold: true, percentiles: '0,50,90,100', sourceDataFiles: '**/*.jtl'
 		})
       }
     }
