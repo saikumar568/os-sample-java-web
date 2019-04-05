@@ -32,37 +32,49 @@ pipeline {
        // }
       }
     }
-    stage('test') {
-      steps {
-        parallel(
-          "code analyze": {
-            tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-            withSonarQubeEnv('SonarScanner') { // from SonarQube servers > name
+    //stage('test') {
+     // steps {
+      //  parallel(
+       //   "code analyze": {
+         //   tool name: 'SonarScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+         //   withSonarQubeEnv('SonarScanner') { // from SonarQube servers > name
     		//sh "${SonarScanner}/bin/sonar-scanner"
-		    bat "C:/sonarqube-7.7/bin/windows-x86-64/sonar-runner -Dsonar.projectName=os-sample-java-web -Dsonar.projectVersion=1.0 -Dsonar.projectKey=os-sample-java-web -Dsonar.sources=src/main/webapp -Dsonar.java.binaries=target/classes"
-            }
-          },
-          "unit tests": {
-           sh 'mvn test'
+		//    bat "C:/sonarqube-7.7/bin/windows-x86-64/sonar-runner -Dsonar.projectName=os-sample-java-web -Dsonar.projectVersion=1.0 -Dsonar.projectKey=os-sample-java-web -Dsonar.sources=src/main/webapp -Dsonar.java.binaries=target/classes"
+           // }
+        //  },
+        //  "unit tests": {
+        //   sh 'mvn test'
             
-          }
-        )
-      }
-    }
+        //  }
+      //  )
+    //  }
+   // }
+	  stage ('Artifactory configuration') {
+        // Obtain an Artifactory server instance, defined in Jenkins --> Manage:
+        server = Artifactory.server SERVER_ID
+
+        rtMaven = Artifactory.newMavenBuild()
+        rtMaven.tool = MAVEN_TOOL // Tool name from Jenkins configuration
+        rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
+        rtMaven.resolver releaseRepo: 'maven-lib', snapshotRepo: 'maven-snap', server: server
+        rtMaven.deployer.deployArtifacts = false // Disable artifacts deployment during Maven run
+
+        buildInfo = Artifactory.newBuildInfo()
+}
     stage('Dev') {
       steps {
         echo 'Dev env'
       }
     }
-    stage('Staging') {
-      steps {
-        echo 'stage env'
-      }
-    }
-    stage('Production') {
-      steps {
-        echo 'prod env'
-      }
-    }
+    //stage('Staging') {
+     // steps {
+      //  echo 'stage env'
+    //  }
+   // }
+  //  stage('Production') {
+   //   steps {
+     //   echo 'prod env'
+    //  }
+   // }
   }
 }
