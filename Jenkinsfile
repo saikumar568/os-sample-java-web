@@ -27,7 +27,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        bat 'bat \'start runapp.bat\''
+        bat 'sh \'cp target/ROOT.war C:\\Program Files\\Apache Software Foundation\\Tomcat 8.5ebapps/\''
       }
     }
   }
