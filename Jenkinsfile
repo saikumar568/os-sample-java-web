@@ -105,7 +105,7 @@ pipeline {
        // bat 'git clone https://github.com/Ajayvarma8142/os-sample-java-web.git'
        
       //bat 'cd ecommerce-uitests && gradlew cucumber -Pfeatures=src/test/resources/gradle/cucumber report --continue'
-	//cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'ecommerce-uitests'	
+	//cucumber fileIncludePattern: 
 	},
 		//"performance tests":{
 			//bat 'rmdir /S /Q Jmeter'
