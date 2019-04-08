@@ -1,1 +1,1 @@
-bat 'copy C:/Program Files (x86)/Jenkins/jobs/os-sample-java-web/branches/master/workspace/target/*.war C:/Program Files/Apache-Software-Foundation/Tomcat-8.5/webapps
+bat 'copy c:\progra~2\Jenkins\jobs\Ajay\branches\master\workspace\target\ROOT.war C:\progra~1\Apache-Software-Foundation\Tomcat-8.5\webapps'
