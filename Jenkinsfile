@@ -21,5 +21,10 @@ pipeline {
         bat 'mvn test'
       }
     }
+    stage('Deploy') {
+      steps {
+        bat 'bat runapp.bat'
+      }
+    }
   }
 }
