@@ -23,7 +23,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        bat 'bat runapp.bat'
+        bat 'runapp.bat'
       }
     }
   }
