@@ -8,7 +8,7 @@ pipeline {
     }
     stage('build') {
       steps {
-        bat 'mvn install'
+        sh 'mvn install'
       }
     }
     stage('SonarQube') {
